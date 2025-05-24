@@ -1,4 +1,4 @@
-a# Feladatmappa:
+# Feladatmappa:
 #
 # signals
 # Leírás:
