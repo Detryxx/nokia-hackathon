@@ -38,5 +38,5 @@ with open("input.txt", "r") as file:
     while line:
         min = int(line.strip().split(" ")[0])
         max = int(line.strip().split(" ")[1])
-        dice_range_expression(min, max)
+        dice_range_expression(min, max)0
         line = file.readline()
