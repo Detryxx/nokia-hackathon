@@ -1,18 +1,18 @@
-def dice_range_expression(min_val: int, max_val: int) -> str:
+def dice_range_expression(min_val: int, max_val: int):
     dice_sizes = (20, 10, 8, 6, 4, 3, 2)
     if min_val >= 0:
         biggest = max_val - min_val + 1
         offset = max_val - biggest
     else:
         biggest = max_val - min_val + 1
-        offset = min_val -1
+        offset = min_val - 1
     needed_dice = []
 
     for size in dice_sizes:
         while biggest - size >= 0 and biggest % 2 != 0:
             while biggest % 2 != 0 and biggest - size >= 0:
-                    needed_dice.append(3)
-                    biggest -= 3
+                needed_dice.append(3)
+                biggest -= 3
         while biggest - size >= 0 and biggest % 2 == 0:
             needed_dice.append(size)
             biggest -= size
@@ -33,8 +33,7 @@ def dice_range_expression(min_val: int, max_val: int) -> str:
         offset = ""
     print(f"{final_dice.rstrip('+')}{offset}")
 
-
-with open("input.txt", "r") as file:
+with open("./input.txt", "r") as file:
     line = file.readline()
     while line:
         min = int(line.strip().split(" ")[0])
