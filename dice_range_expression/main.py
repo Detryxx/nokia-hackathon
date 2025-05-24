@@ -16,7 +16,7 @@ def dice_range_expression(min_val: int, max_val: int):
         while biggest - size >= 0 and biggest % 2 == 0:
             needed_dice.append(size)
             biggest -= size
-    print("miret nem mukodik az oldalon")
+
     needed_dice.sort(reverse=True)
     dice_dict = {}
     for x in needed_dice:
@@ -33,13 +33,10 @@ def dice_range_expression(min_val: int, max_val: int):
         offset = ""
     print(f"{final_dice.rstrip("+")}{offset}")
 
-print("ezert nem")
 with open("input.txt", "r") as file:
     line = file.readline()
-    print("vagy ezert")
     while line:
         min = int(line.strip().split(" ")[0])
         max = int(line.strip().split(" ")[1])
         dice_range_expression(min, max)
         line = file.readline()
-        print("talan ezert")
