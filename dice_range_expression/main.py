@@ -1,4 +1,4 @@
-def dice_range_expression(min_val: int, max_val: int) -> str:
+def dice_range_expression(min_val: int, max_val: int):
     dice_sizes = (20, 10, 8, 6, 4, 3, 2)
     if min_val >= 0:
         biggest = max_val - min_val + 1
