@@ -33,7 +33,7 @@ def dice_range_expression(min_val: int, max_val: int):
         offset = ""
     print(f"{final_dice.rstrip("+")}{offset}")
 
-with open("input.txt", "r") as file:
+with open("./input.txt", "r") as file:
     line = file.readline()
     while line:
         min = int(line.strip().split(" ")[0])
