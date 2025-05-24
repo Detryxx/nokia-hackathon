@@ -48,7 +48,6 @@
 # (['5.9.1'], ['A']),
 # (['7.1.8', '8.6.4', '7.4', '6.7.4', '9.3.8'], ['D', 'B', 'H', 'F', 'G']),
 # (['1', '5.9.1', '7.1.8', '6.7.4', '3.9', '6', '8.6.4', '7.4'], ['B', 'D', 'C', 'H', 'A', 'F', 'D', 'I'])
-from dataclasses import asdict
 
 
 def get_days(input_file) -> dict:
@@ -57,21 +56,34 @@ def get_days(input_file) -> dict:
         counter = 0
         days = {}
         while line:
-            counter += 1
-            days["day{0}".format(counter)] = line.strip()
-            line = file.readline().strip()
-        print(days)
+            if line == "[" or line == "]":
+                line = file.readline().strip()
+            else:
+                counter += 1
+                days["day{0}".format(counter)] = line.strip()
+                line = file.readline().strip()
+
         return days
 
 
 def decode(input_file):
     days = get_days(input_file)
     counter = 0
-    coded = {}
-    for k, v in days.items():
-        code, event = v.split("], [")
-        code = code.lstrip("([")
-        event = event.rstrip("]),")
-        print(code, event, "\n \n")
+    decoded = {}
+    while len(decoded) != 8:
+        for k, v in days.items():
+            code, event = v.split("], [")
+            code = code.lstrip("([").strip("'").strip(",").split()
+            event = event.rstrip("]),").strip("'").strip(",").split()
+            if len(event) == 1:
+                decoded[str(code).strip("['").strip("']")] = str(event).strip("['").strip("']")
+            if len(event) == len(decoded) + 1:
+                if ((ke for ke, va in decoded.items()) in code):
+                    # print(code, event)
+                    # print(decoded)
+                    for key, val in decoded.items():
+                        code.remove(key)
+                        event.remove(val)
+    # print(decoded)
 decode("input.txt")
 

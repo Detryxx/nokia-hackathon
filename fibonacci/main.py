@@ -22,7 +22,7 @@ def fibonacci(n):
     return solution
 
 
-with open("input.txt", "r") as file:
+with open("./input.txt", "r") as file:
     line = file.readline()
     while line:
         try:
