@@ -1,89 +1,92 @@
-# Feladatmappa:
-#
-# signals
-# Leírás:
-#
-# Feladatod hogy dekódold két ellenséges bázis közötti rádió kommunikációt. Belehallgatva a rádióadásukba, rövid csipogásokat hallasz és egy rövid szünetet egy-egy adag csipogás között. Úgy tűnik ez egy kód, gyorsan fel is jegyezted a hallottakat amelyek a következők: 3.4 (3 csipogás, majd egy rövid szünet, majd 4 csipogás) 2.1.2.4 (2 csipogás, 1 csipogás, 2 csipogás, 4 csipogás)
-#
-# A kódokat minden nap reggelén közvetítik. A nap folyamán történteket is feljegyezted: jelek = [“3.4”, “2.1.2.4”] esemenyek = [“A”, “B”] (Tudjuk, hogy "3.4" és "2.1.2.4" biztosan az "A" és "B" eseményhez köthetőek, de nem tudjuk melyik kód melyik eseméynt jelenti.)
-#
-# Több napnyi kód összehasonlításával meg tudod fejteni a kódokat; a megoldás pedig így néz ki. decoded = {“3.4”: “B”, “2.1.2.4”: “A”}
-#
-# Továbbá: - Több napnyi jeleket és eseményeket fogsz kapni, melyeket fel kell majd dolgoznod. - Minden kód csak egy eseményt jelenthet, viszont egy eseménynek lehet több különböző kódja is. - Mindig lesz elegendő információ a feladat megoldásához.
-# Bemenet:
-#
-# A bemenet egy lista lesz, amelyben minden egyes napot egy-egy tuple fog reprezentálni. Egy adott naphoz tartozó tuple-ben lesz két lista:
-#
-#     Az első lista tartalmazza az adott nap reggelén hallott kódokat mint string-ek (pl.: ["5", "3.4", "2.1.2.4"])
-#     A második listában pedig az adott nap eseményei lesznek mint betűk (pl.: ["A", "B", "O", "I"])
-#
-# Kimenet:
-#
-# A programnak az adott lista bemenetre ki kell írnia a megfejtést egy dictionary-be rendezve a következő péda szerint. Fontos, hogy a ditonary kulcsaiként szerepeljenek stringként a kódok, az értékeik pedig a történések betűjelei legyenek szintén mint string.
-# Példa:
-#
-# input.txt
-#
-# [
-#     (["4.1", "5"], ["A", "O"]),
-#     (["4.1", "5", "1.2.3"], ["T", "O", "A"]),
-#     (["5"], ["O"])
-# ]
-#
-# console printout:
-#
-# {
-#     "5": "O",
-#     "4.1": "A",
-#     "1.2.3": "T"
-# }
-#
-#
-# (['8.6.4', '5.9.1', '9.3.8', '6.7.4', '8', '1', '3.8', '7.4', '6'], ['A', 'B', 'C', 'D', 'D', 'E', 'F', 'D', 'G']),
-# (['7.1.8', '1', '9.3.8', '7.4', '3.9', '8.6.4'], ['B', 'D', 'H', 'G', 'I', 'D']),
-# (['9.3.8', '3.9'], ['I', 'G']),
-# (['8.6.4', '7.1.8', '9'], ['D', 'H', 'A']),
-# (['6', '1', '8.6.4', '5.9.1', '9.3.8'], ['C', 'G', 'A', 'D', 'D']),
-# (['6', '7.4', '3.8', '1', '5.9.1', '9.3.8'], ['D', 'G', 'C', 'D', 'B', 'A']),
-# (['5.9.1'], ['A']),
-# (['7.1.8', '8.6.4', '7.4', '6.7.4', '9.3.8'], ['D', 'B', 'H', 'F', 'G']),
-# (['1', '5.9.1', '7.1.8', '6.7.4', '3.9', '6', '8.6.4', '7.4'], ['B', 'D', 'C', 'H', 'A', 'F', 'D', 'I'])
+import ast
 
 
-def get_days(input_file) -> dict:
-    with open(input_file, 'r') as file:
-        line = file.readline().strip()
-        counter = 0
-        days = {}
-        while line:
-            if line == "[" or line == "]":
-                line = file.readline().strip()
+def input_days(input_file):                                     #makes the input file into a dictionary containing the codes as the key and the events as the value for each respective days' code
+    with open(input_file, "r") as file:
+        file_content = file.read()
+
+        day = ast.literal_eval(file_content)                    #actually does the conversion
+
+    return {tuple(codes): events for codes, events in day}      #returns the dict of the days
+
+
+def fewest_unknown(could_be, assigned):                         #checks which code has the fewest possible events
+    min_cand = float("inf")                                     #minimum candidates are infinite which is the worst case
+    selected = None
+
+    for code in could_be:
+        if code not in assigned:                                #it checks wether or not an item in could_be is in assigned
+            cands = len(could_be[code])                         #counts events left
+            if cands < min_cand:
+                min_cand = cands
+                selected = code
+
+    return selected                                             #returns the best one
+
+
+def backtrack(could_be, assigned):
+    if all(code in assigned for code in could_be):              #if everything has been assigned, were good and it returns the solution
+        return assigned
+
+    best_code = fewest_unknown(could_be, assigned)              #chucks the things into the fewest_unknown func and that does what the name implies
+
+    for event in could_be[best_code]:                           #tries to assign the events
+        assigned[best_code] = event
+        result = backtrack(could_be, assigned)                  #continue with the assignment recursively
+        if result is not None:                                  #if it found the solution-
+            return result                                       #it returns the result
+
+        del assigned[best_code]                                 #if we didnt succeed, it undoes the assignment
+
+    return None                                                 #if there are no valid assignments it cant find the solution
+
+
+def decoder(input_file):
+    """
+    this is the like initinal decoder but it also decodes the whole decoding thing using another function
+    it takes the input file,  throws that into the like file reading function and using that,
+    it tries to solve it, and which it could get passed into the decoded dict, and if it could find it,
+    it passes the cb4a - which is could_be for assignment - and the already decoded stuff to the bakctrack function
+    """
+    days = input_days(input_file)                               #makes use of the input_days func to exctract data
+    could_be = {}                                               #initial - not too sure about codes and event pairs
+    decoded = {}                                                #the stuff that is 100% good
+
+    for codes, events in days.items():
+        event_tup = set(events)                                 #converts the events into a tuple for faster processing
+        for code in codes:
+            if code not in could_be:
+                could_be[code] = event_tup.copy()               #it assumes that code corresponds to every event that day
             else:
-                counter += 1
-                days["day{0}".format(counter)] = line.strip()
-                line = file.readline().strip()
+                could_be[code] &= event_tup                     #only keeps events that it sees on the same day that the code appears
 
-        return days
+    for k, v in could_be.items():                               #if it only has one candidate, it counts it as immediately decoded
+        if len(v) == 1:
+            decoded[k] = next(iter(v))
+
+    while True:                                                 #try to get better assignments
+        are_we_getting_any_closer = False                       #assuemes we hit a dead end
+        for code, events_tup in days.items():
+            if code not in decoded and len(events) == 1:        #if only one code appears with one event, it assumes its correct
+                event = events_tup
+                decoded[code] = event
+                are_we_getting_any_closer = True
+        if not are_we_getting_any_closer:
+            break                                               #if no new codes can be decoded, it stops
+
+    cb4a = could_be.copy()                                      #copies the could_be dict for the backtrack func
+    for entries in could_be:
+        if entries in decoded:                                  #removes things from the cb4a dict if theyre decoded
+            cb4a.pop(entries)
+
+    decoded = backtrack(cb4a, decoded)                          #uses the backtrack func to decode the remaining events
+
+    solution = "{\n"                                            #makes the solution pretty like in the readme
+    for k, v in decoded.items():
+        solution += f'    "{k}": "{v}",\n'
+    solution += "}"
+
+    return solution
 
 
-def decode(input_file):
-    days = get_days(input_file)
-    counter = 0
-    decoded = {}
-    while len(decoded) != 8:
-        for k, v in days.items():
-            code, event = v.split("], [")
-            code = code.lstrip("([").strip("'").strip(",").split()
-            event = event.rstrip("]),").strip("'").strip(",").split()
-            if len(event) == 1:
-                decoded[str(code).strip("['").strip("']")] = str(event).strip("['").strip("']")
-            if len(event) == len(decoded) + 1:
-                if ((ke for ke, va in decoded.items()) in code):
-                    # print(code, event)
-                    # print(decoded)
-                    for key, val in decoded.items():
-                        code.remove(key)
-                        event.remove(val)
-    # print(decoded)
-decode("input.txt")
-
+print(decoder("./input.txt"))
