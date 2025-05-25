@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e4b8b12-7b22-474c-9116-e867ae72059a" name="Changes" comment="Solved gear_system">
+    <list default="true" id="2e4b8b12-7b22-474c-9116-e867ae72059a" name="Changes" comment="Added ast to requirements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fibonacci/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibonacci/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signals/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/signals/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,27 +43,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main (1).executor": "Run",
+    "Python.main (2).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.main (1)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nokia-hackathon" />
@@ -188,7 +187,10 @@
       <workItem from="1748100333289" duration="3079000" />
       <workItem from="1748103504548" duration="7265000" />
       <workItem from="1748116023802" duration="3787000" />
-      <workItem from="1748120386974" duration="927000" />
+      <workItem from="1748120386974" duration="2461000" />
+      <workItem from="1748165114097" duration="4093000" />
+      <workItem from="1748170919924" duration="3823000" />
+      <workItem from="1748174962050" duration="5568000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -374,7 +376,39 @@
       <option name="project" value="LOCAL" />
       <updated>1748121149778</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updated trivial things">
+      <option name="closed" value="true" />
+      <created>1748121346575</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748121346575</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated trivial things">
+      <option name="closed" value="true" />
+      <created>1748182076667</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748182076667</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Completed signals">
+      <option name="closed" value="true" />
+      <created>1748182108589</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1748182108589</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added ast to requirements">
+      <option name="closed" value="true" />
+      <created>1748182477880</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748182477880</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +434,10 @@
     <MESSAGE value="Check" />
     <MESSAGE value="If this doesnt fix it idk what will" />
     <MESSAGE value="Solved gear_system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved gear_system" />
+    <MESSAGE value="Updated trivial things" />
+    <MESSAGE value="Completed signals" />
+    <MESSAGE value="Added ast to requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ast to requirements" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -411,8 +448,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nokia_hackathon$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1748114037736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dice_range_expression" />
-    <SUITE FILE_PATH="coverage/nokia_hackathon$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1748104753063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/signals" />
+    <SUITE FILE_PATH="coverage/nokia_hackathon$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1748182452329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/signals" />
     <SUITE FILE_PATH="coverage/nokia_hackathon$main.coverage" NAME="main Coverage Results" MODIFIED="1748110075248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dice_range_expression" />
-    <SUITE FILE_PATH="coverage/nokia_hackathon$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1748121085358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gear_system" />
+    <SUITE FILE_PATH="coverage/nokia_hackathon$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1748121321784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gear_system" />
   </component>
 </project>

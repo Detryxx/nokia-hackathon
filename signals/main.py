@@ -1,10 +1,13 @@
 import ast
 
+
 def input_days(input_file):                                     #makes the input file into a dictionary containing the codes as the key and the events as the value for each respective days' code
     with open(input_file, "r") as file:
         file_content = file.read()
-
-        day = ast.literal_eval(file_content)                    #actually does the conversion
+        try:
+            day = ast.literal_eval(file_content)                    #actually does the conversion
+        except SyntaxError:
+            pass
 
     return {tuple(codes): events for codes, events in day}      #returns the dict of the days
 
