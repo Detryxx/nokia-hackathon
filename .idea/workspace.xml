@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e4b8b12-7b22-474c-9116-e867ae72059a" name="Changes" comment="Added ast to requirements">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2e4b8b12-7b22-474c-9116-e867ae72059a" name="Changes" comment="Tried fixing bc not working on website">
       <change beforePath="$PROJECT_DIR$/signals/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/signals/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +189,7 @@
       <workItem from="1748120386974" duration="2461000" />
       <workItem from="1748165114097" duration="4093000" />
       <workItem from="1748170919924" duration="3823000" />
-      <workItem from="1748174962050" duration="5568000" />
+      <workItem from="1748174962050" duration="5857000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -408,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748182477880</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Tried fixing bc not working on website">
+      <option name="closed" value="true" />
+      <created>1748182781855</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1748182781855</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +444,8 @@
     <MESSAGE value="Updated trivial things" />
     <MESSAGE value="Completed signals" />
     <MESSAGE value="Added ast to requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ast to requirements" />
+    <MESSAGE value="Tried fixing bc not working on website" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried fixing bc not working on website" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
