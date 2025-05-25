@@ -81,9 +81,14 @@ def decoder(input_file):
 
     decoded = backtrack(cb4a, decoded)                          #uses the backtrack func to decode the remaining events
 
-    solution = "{\n"                                            #makes the solution pretty like in the readme
-    for k, v in decoded.items():
-        solution += f'    "{k}": "{v}",\n'
+    solution = "{\n"                                            #makes the solution pretty just like in the readme
+    items = list(decoded.items())
+    for i, (k, v) in enumerate(items):
+        if i == len(items) - 1:
+            solution += f'    "{k}": "{v}"\n'
+        else:
+            solution += f'    "{k}": "{v}",\n'
+
     solution += "}"
 
     return solution
