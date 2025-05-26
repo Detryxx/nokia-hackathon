@@ -1,0 +1,42 @@
+1. nincs ötletem - gondolom trigonometria
+
+2.még szerintem nem tanultunk ilyet matekon, biztos van hozzá valami py package, rákeresek, hogy "root finder py package"
+    oh menő a scipy-ba van, melyik lehet a legjobb? itt van, hogy root finding [https://docs.scipy.org/doc/scipy/reference/optimize.html#root-finding], melyik lehet a legjobb?
+    hm az első nem működött valami int hiba miatt, a második? juhuuu működött.
+    ugye az f(x) dolgot ezért kellett csinálnom mert ugye azt írta a dokumentáció, és azért 4**x + 6**x - 9**x mert 0 kell hogy legyen
+    és azért solution.root mert az osztálynak a root attribútuma kell
+
+3. szerintem ezt egy könnyű while-al meg lehet oldani, nem lesz a leghatékonyabb, de működni fog
+    okés szerintem jó és nagyeséjjel 9 a megoldás de 9.000000000000002-et mutat, szerintem ez egy fp mivel sok a művelet,
+    ezért lekerekítem, oké szerintem jó lesz így
+
+4. jujj ez már nehezebbnek tűnik, működne az amit az elsőn használtam? :( nem működött valami sign dolog miatt, beats me,
+    akkor használjuk a következő 'metódust', még mindig sign error, kövi ua., kövi ua., kövi, juhuuu már más a probléma,
+    utána járok, x0 must not be None, oké akkor megváltoztatom monjkuk 1-re, jó ez működött, leelenőrizem okés, ez is jó
+
+5. uhh ez is nehéznek tűnik, hm
+    adatok:
+        teki: t
+        cica: c
+        asztal teteje: at
+        at-t+c = 170
+        at-c+t = 130
+    okés háromváltozós egyenlet, belerakom a wolfram alpha-ba [https://www.wolframalpha.com/calculators/system-equation-calculator]
+    "t = c - 20 and c!=20 and a = 150/(c - 20)"
+    hm itt valamit szerintem elrontottam, fussunk neki mégegyszer
+    oh, rosszul raktam bele mert az "at"-t a*t -nek nézte, ha jól belerakom:
+    "t = c - 20 and a = 150"
+    szóval az asztal 150 cm, most ezt valahogy python ban is meg kéne csinálni, keresek hozzá egy könyvtárat
+    a numpy-ba ez[https://www.statology.org/solve-system-of-equations-in-python/] alapján van megoldó dologű
+    hát ez nem működött, taaláltam valami olyat, hogy sympy[https://www.sympy.org/en/index.html]
+    próbáljuk ki, juhuu működik
+
+6. ez is ugyan az mint az előző, nem kéne nehéznek lennie
+    nem is volt az, nagyon nincs mit magyarázni, az előzőböl alakítottam át
+
+7. itt azt gondolnám, hogy 50/50 de ha az lenne, nem lenne itt feladat szóval van valami turpisság
+    ugye egy fer dobókockával dobnak, szóval 1, 6 ig random számokat veszünk, először anna listájába, utána balázséba rakunk egy számot
+    ezután megnézzük, hogy van e a listájukba 6, ha igen akkor hozzáadjuk a bnetűjüket a winners listához
+    ezt 300e szer ismételjük, megnézzük, hogy mennyiszer van benne anna és mennyiszer van benne balázs,
+    hogy megkapjuk anna nyerési százalékát, anna nyerései / (anna nyerései + balázs nyerései) képletet használjuk
+    a megoldás ~54,5% lesz
