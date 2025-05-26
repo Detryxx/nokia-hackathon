@@ -3,7 +3,13 @@ import sympy
 import random
 
 #first
-print("1.:")
+R = sympy.symbols('R')
+radius = sympy.Eq((((R - 2) / R) ** 2) + (((R - 1) / R) ** 2), 1)
+solution_1 = sympy.solve(radius)
+for i in solution_1:
+    if i == 1:                      #this is because cos != 0 and if R = 1 then (R - 1) / R = 1 - 1 / 1 = 0 / 1 = 0
+        solution_1.remove(i)
+print(f"1.: {solution_1[0]}")
 
 
 #second
@@ -32,13 +38,13 @@ print(f"4.: {solution.root}")
 
 
 #fifth
-asztal, t, c = sympy.symbols('asztal t c')
+a, t, c = sympy.symbols('a t c')
 
-equation1 = sympy.Eq(asztal - t + c, 170)
-equation2 = sympy.Eq(asztal - c + t, 130)
+equation1 = sympy.Eq(a - t + c, 170)
+equation2 = sympy.Eq(a - c + t, 130)
 
 solution_5 = sympy.solve((equation1, equation2))
-print(f"5.: {solution_5[asztal]}")
+print(f"5.: {solution_5[a]}")
 
 
 #sixth
@@ -57,22 +63,16 @@ print(f"6.: {solution_6[t]}")
 Anna = []
 Balazs = []
 winners = []
-for x in range(500000):
-    while 6 not in Anna or 6 not in Balazs:
-        die_roll = random.randint(1, 6)
-        Anna.append(die_roll)
+for x in range(1000000):
+    while True:
+        dice_roll = random.randint(1, 6)
+        Anna.append(dice_roll)
         if 6 in Anna:
             winners.append("A")
             break
-        elif 6 in Balazs:
-            winners.append("B")
-            break
-        die_roll = random.randint(1, 6)
-        Balazs.append(die_roll)
-        if 6 in Anna:
-            winners.append("A")
-            break
-        elif 6 in Balazs:
+        dice_roll = random.randint(1, 6)
+        Balazs.append(dice_roll)
+        if 6 in Balazs:
             winners.append("B")
             break
     Anna = []

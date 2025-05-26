@@ -1,4 +1,8 @@
 1. nincs ötletem - gondolom trigonometria
+    utánanézek, hogy lehetne ezt megcsinálni, rákerestem a képre és eljött egy cikk[https://mathematicsart.com/solved-exercises/calculate-the-radius-r/]
+    itt itt van a megoldás de ezt kicsit csalásnak érzem, de mivel nem volt megadva, hogy nem használhatunk külső forrásokat ezért szeintem teljesen okés
+    ahogy néztem a sympy tud algebrát oldani szóval juhuu
+    megcsináltam a scriptet, működik és mivel cos != 0 ezért a megoldás nem lehet 1 ezért R = 5
 
 2.még szerintem nem tanultunk ilyet matekon, biztos van hozzá valami py package, rákeresek, hogy "root finder py package"
     oh menő a scipy-ba van, melyik lehet a legjobb? itt van, hogy root finding [https://docs.scipy.org/doc/scipy/reference/optimize.html#root-finding], melyik lehet a legjobb?
@@ -39,4 +43,4 @@
     ezután megnézzük, hogy van e a listájukba 6, ha igen akkor hozzáadjuk a bnetűjüket a winners listához
     ezt 300e szer ismételjük, megnézzük, hogy mennyiszer van benne anna és mennyiszer van benne balázs,
     hogy megkapjuk anna nyerési százalékát, anna nyerései / (anna nyerései + balázs nyerései) képletet használjuk
-    a megoldás ~54,5% lesz
+    a megoldás ~54,5% lesz, kicsi optimalizálások után 1.25m-szor is le tud futni kevesebb mint 5mp alatt
