@@ -63,7 +63,7 @@ print(f"6.: {solution_6[t]}")
 Anna = []
 Balazs = []
 winners = []
-for x in range(1000000):
+for x in range(1250000):
     while True:
         dice_roll = random.randint(1, 6)
         Anna.append(dice_roll)
